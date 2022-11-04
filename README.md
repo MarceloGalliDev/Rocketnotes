@@ -1,6 +1,7 @@
 # Rocketnotes
- Explorer project
+Explorer project
 
- Tecnologias utilizadas
- - ReactJ + Typescript com ViteJS
- 
+Tecnologias utilizadas
+    - ReactJ + Typescript com ViteJS
+    - Styled Components
+    - React-Icons 
