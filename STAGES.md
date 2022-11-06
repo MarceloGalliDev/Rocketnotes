@@ -14,8 +14,12 @@ Stage 2
     - Tag
 
 Stage 3
-- Criação dos componentes
-    - Home
+- Criação das pages
+
+Stage 4
+- Criação das Routes
+- Routes Auth
+- Routes App
 
 
 
