@@ -2,6 +2,7 @@
 Explorer project
 
 Tecnologias utilizadas
-    - ReactJ + Typescript com ViteJS
+    - ReactJ com ViteJS
     - Styled Components
-    - React-Icons 
+    - React-Icons
+    - React-router-dom 
