@@ -1,11 +1,12 @@
 import { Container, Form, Background } from "./styles";
 import { Input } from "../../components/Input";
-import { FiLogIn, FiMail, FiLock, FiUser } from "react-icons/fi"
+import { FiMail, FiLock, FiUser } from "react-icons/fi"
 import { Button } from "../../components/Button"
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
 
 export function SignUp() {
+    const [] = useState();
     return (
         <Container>
             <Background />
