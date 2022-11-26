@@ -19,19 +19,20 @@ export const Form = styled.form`
         font-size: 48px;
         color: ${({ theme }) => theme.COLORS.ORANGE};
     }
-
-    > h2 {
-        font-size: 24px;
-        margin-top: 48px 0;
-    }
-
+    
     > p {
         font-size: 14px;
         color: ${({ theme }) => theme.COLORS.GRAY_100};
+        margin-bottom: 40px;
+    }
+    
+    > h2 {
+        font-size: 24px;
+        margin-bottom: 40px;
     }
 
     > a {
-        margin-top: 100px;
+        margin-top: 60px;
         color: ${({ theme }) => theme.COLORS.ORANGE};
     }
 `;
