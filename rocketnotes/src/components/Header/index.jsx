@@ -14,12 +14,12 @@ export function Header() {
             <Profile to="/profile">
                 <img 
                     src={avatarUrl}
-                    alt="Foto de perfil do usuário"
+                    alt={user.name}
                 />
 
                 <div>
                     <span>Bem-Vindo</span>
-                    <strong>Marcelo L. Galli</strong>
+                    <strong>{user.name}</strong>
                 </div>
             </Profile>
 
