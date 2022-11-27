@@ -5,6 +5,8 @@ import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+import { api } from "../../services/api";
 
 export function Profile() {
     const { user, updateProfile } = useAuth();
@@ -14,7 +16,8 @@ export function Profile() {
     const [passwordOld, setPasswordOld] = useState();
     const [passwordNew, setPasswordNew] = useState();
 
-    const [avatar, setAvatar] = useState(user.avatar);//aqui temos o avatar ja carregado caso exista
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;//ternario para fazer o carregamento incial ou se ja existir uma imagem
+    const [avatar, setAvatar] = useState(avatarUrl);//aqui temos o avatar ja carregado caso exista
     const [avatarFile, setAvatarFile] = useState(null);//aqui é o que será carregado pelo usuário
 
     async function handleUpdate() {
@@ -25,7 +28,7 @@ export function Profile() {
             old_password: passwordOld,
         }
         
-        await updateProfile({ user })
+        await updateProfile({ user, avatarFile })
     }
 
     function handleChangeAvatar(event) {
