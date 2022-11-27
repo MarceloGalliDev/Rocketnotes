@@ -63,4 +63,15 @@ passamos como propriedade o title, que foi desestruturado
  - HOOKS
     - usado para encapsulamento de funções, sem necessidade de criar uma classe
     - usado para mudanaç de estado, utilizando o useState e useEffect
-    
+
+- LocalStorage
+    - permite armazenamento de informações mesmo que o navegador seja fechado
+    - ele usa chave e valor
+    - so pode ser armazenado texto no local storage, por isso é necessário fazermos um parce quando se tem um objeto
+    - comandos para local storage:
+        - aqui estamos setando os itens selecionados
+        - localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
+        - localStorage.setItem("@rocketnotes:token", token);
+
+        - aqui estamos removendo os itens do localStorage
+        -  const token = localStorage.removeItem("@rocketnotes:token");
