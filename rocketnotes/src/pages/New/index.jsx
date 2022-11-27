@@ -7,8 +7,12 @@ import { Container, Form } from "./styles";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { api } from "../../services/api";
+import { useNavigate } from "react-router-dom";
 
 export function New() {
+    const navigate = useNavigate();
+    
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
 
@@ -36,6 +40,30 @@ export function New() {
         setTags(prevState => prevState.filter(tag => tag !== deleted));
     }
 
+    async function handleNewNote() {
+        if(!title) {
+            return alert("Digite o título da nota!")
+        };
+
+        if(newLink) {
+            return alert("Campo link preenchido mais não está adicionado!")
+        };
+
+        if(newTag) {
+            return alert("Campo tag preenchido mais não está adicionado!")
+        };
+
+        await api.post("/notes", {
+            title,
+            description,
+            tags,
+            links
+        });
+
+        alert("Nota criada com sucesso!");
+        navigate("/");
+    }
+
     return(
         <Container>
             <Header />
@@ -48,8 +76,12 @@ export function New() {
 
                     <Input
                         placeholder="Título"
+                        onChange={e => setTitle(e.target.value)}
                     />
-                    <Textarea placeholder="Observação"/>
+                    <Textarea 
+                        placeholder="Observação"
+                        onChange={e => setDescription(e.target.value)}
+                    />
 
                     <Section title="Links Úteis">
                         {
@@ -90,7 +122,10 @@ export function New() {
                             />
                         </div>
                     </Section>
-                    <Button title="Salvar"/>
+                    <Button 
+                        title="Salvar"
+                        onClick={handleNewNote}
+                    />
                 </Form>
             </main>
         </Container>
