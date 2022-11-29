@@ -6,7 +6,6 @@ import { Section } from "../../components/Section";
 import { Container, Form } from "./styles";
 import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +21,10 @@ export function New() {
 
     const [tags, setTags] = useState([]);//coleção de tags
     const [newTag, setNewTag] = useState("");
+
+    function handleBack() {
+        navigate(-1)
+    }
 
     function handleAddLink() {
         setLinks(prevState => [...prevState, newLink]);//aqui estamos acessando tudo que tinha antes atraves do prevState e despejando dentro do novo array + o novo link
@@ -72,8 +75,7 @@ export function New() {
                 <Form>
                     <header>
                         <h1>Criar Nota</h1>
-                        <ButtonText>Voltar</ButtonText>
-
+                        <ButtonText title="Voltar" onClick={handleBack}/>
                     </header>
 
                     <Input
