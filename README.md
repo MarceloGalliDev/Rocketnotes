@@ -20,3 +20,6 @@ O que são HOOKS?
     const [total, setTotal] = useState(0)
     setTotal(prevState => prevState + 1);
  - não é atualizado instantaneamente, ele leva frações de segundos
+
+ >> Netlify
+   - usado para colocar no ar o front-end
